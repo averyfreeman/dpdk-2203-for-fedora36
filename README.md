@@ -74,4 +74,10 @@ dnf install -y \
 
 Put the [22.03 original source code](https://fast.dpdk.org/rel/dpdk-22.03.tar.xz) in `/home/username/rpmbuild/SOURCES/name-of-tar.gz` (easiest to just `wget` it there)
 
-I've included built packages since who really wants to have to build this stuff themselves. amd64 only.
+```
+$ rpmbuild -ba dpdk.spec
+```
+
+Wait for them to compile, then grab them out of `/home/username/rpmbuild/RPMS/x86_64`. Be prepared, it takes a while, go for a walk or make yourself some tea or something. 
+
+I've included the rpm packages since I doubt anyone really wants to have to wait for this stuff to build if they don't have to, and all the sources are available other places, so you don't need that from me.  I only made amd64 versions, the debuginfo rpms are not necessary unless you want to do debugging, the .noarch is not necessary unless you want the man pages.
