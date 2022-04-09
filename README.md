@@ -5,15 +5,15 @@
 
 was having issues with openvswitch complaining about dpdk dependencies, needed kernel modules version so.22 from dpdk release 22.03
 
-(latest issue announces version available: )[https://bugzilla.redhat.com/show_bug.cgi?id=1991248]
+[latest issue announces version available: ](https://bugzilla.redhat.com/show_bug.cgi?id=1991248)
 
 but still not compiled through official sources
 
 I'm new to Fedora so I'm just going to throw this up on my github site and worry about developing through the proper channels later.  I'm sure the package maintainer has a better idea of what features and dependencies they need to keep current. Perhaps this work could help if it's already done (they probably have a CI/CD pipeline it needs to be thrown on).
 
-(got rpmbuild from repo: )[https://src.fedoraproject.org/rpms/dpdk.git]
+[got rpmbuild from repo: ](https://src.fedoraproject.org/rpms/dpdk.git)
 
-(spec: )[https://src.fedoraproject.org/rpms/dpdk/blob/f36/f/dpdk.spec]
+[spec: ](https://src.fedoraproject.org/rpms/dpdk/blob/f36/f/dpdk.spec)
 
 tried `meson`, `ninja` from PyPi but not very intuitive how to use for `rpmbuild`, so just installed the rpms (almost just as current, anyway)
 
@@ -37,7 +37,7 @@ dnf groupinstall \
   "Development Tools"
 ```
 
-rpm build dependencies (absolutely required):
+rpm build dependencies (required):
 
 ```
 dnf install -y \
@@ -72,6 +72,6 @@ dnf install -y \
   python3-numpydoc 
 ```
 
-Put the (22.03 original source code)[https://fast.dpdk.org/rel/dpdk-22.03.tar.xz] in `/home/username/rpmbuild/SOURCES/name-of-tar.gz` (easiest to just `wget` it there)
+Put the [22.03 original source code](https://fast.dpdk.org/rel/dpdk-22.03.tar.xz) in `/home/username/rpmbuild/SOURCES/name-of-tar.gz` (easiest to just `wget` it there)
 
 I've included built packages since who really wants to have to build this stuff themselves. amd64 only.
